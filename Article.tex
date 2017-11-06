@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Article EcoFoG
+% Version 2.1 (23/10/2017)
+%
+% adapté de :
+% Stylish Article
+% LaTeX Template
+% Version 1.0 (31/1/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[fleqn,10pt]{ArtEcoFoG} % Document font size and equations flushed left
+
+
+\usepackage{lipsum}      % Ajouter ici les packages nécessaires à la place de lipsum.
+
+\setcounter{tocdepth}{3} % Niveau de détail de la table des matières.
+
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\JournalInfo{Hal xxxx} % Journal information
+\Archive{DOI xxxx} % Additional notes (e.g. copyright, DOI, review/research article)
+
+\PaperTitle{Titre de l'article} % Article title
+
+\Authors{
+  Prénom Nom\textsuperscript{1*}\\ Deuxième Auteur\textsuperscript{2}
+} % Authors
+\affiliation{
+  \textsuperscript{1}UMR EcoFoG, AgroParistech, CNRS, Cirad, INRA, Université des Antilles,
+  Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\\
+  \textsuperscript{2}Department of Ecology, University of Edimburgh\\ \hspace{1em} Street address, Zip code, Country.
+}
+\affiliation{*\textbf{Contact}: prenom.nom@ecofog.gf, http://www.ecofog.gf/spip.php?article47} % Corresponding author
+
+\Keywords{mot-clés, séparés par des virgules} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\newcommand{\keywordname}{Mots-clés}          % (or Keywords) Defines the keywords heading name
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\Abstract{
+  Résumé de l'article.
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+  
+\selectlanguage{french} % french ou english
+
+\flushbottom            % Makes all text pages the same height
+\maketitle              % Print the title and abstract box
+\tableofcontents        % Print the contents section
+\thispagestyle{empty}   % Removes page numbering from the first page
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+
+\section{Introduction}\label{introduction}
+
+Ce modèle permet la rédaction d'articles au format \LaTeX en Français ou en Anglais, avec un formatage correct.
+Il produit des articles bien formatés pour l'auto-harchivage (dépôt sur HAL par exemple).
+
+\section{Mode d’emploi}\label{sec:modemploi}
+
+\subsection{Préambule}\label{sec:preambule}
+
+Le titre de l'article, les noms des auteurs, le résumé, etc. sont saisis dans le préambule du document.
+
+\subsection{Texte}\label{sec:texte}
+
+Utiliser la syntaxe \LaTeX classique.
+
+\subsection{Bibliographie}\label{sec:bibliographie}
+
+Les références bibliographiques doivent être placées dans le fichier \code{references.bib}.
+Elles sont appelées par les commandes \code{\textbackslash citep} \citep{Marcon2014c} ou  \code{\textbackslash cite}, comme \cite{Marcon2014c}.
+
+
+\section{Mise en page}\label{sec:misenpage}
+
+Les figures et tableaux occupent une colonne.
+Ajouter une étoile après la commande pour une mise en page en pleine largeur; voir par exemple le tableau~\ref{table:step1}.
+
+\begin{table*}
+  \caption{Estimating the number of neighbors}
+  \centering
+  \begin{tabularx}{\textwidth}{p{3cm} p{7cm} X}
+    \toprule
+    Function & Neighbors around $x_i$ & Observations \\
+    \midrule
+    
+    $\widehat{K} \left( r \right) / \left( \pi r^2 \right)$ 
+    & $\displaystyle n\left(x_i,r\right) = \sum_{j, i \ne j} \mathbf{1} \left(\left\|x_i - x_j \right\| \le r \right) c\left( i,j \right)$
+    & The number of neighbors is counted and corrected from edge effects. \\ 
+    
+    $\widehat{M} \left( r \right) $ 
+    & $\displaystyle n \left( x_i, r \right) = \sum_{j, i \ne j}{\mathbf{1} \left( \left\| x_i - x^c_j \right\| \le r \right) w \left( x^c_j \right)}$ 
+    & Each neighbor of the type of interest counts for its weight. \\
+    
+    \bottomrule
+  \end{tabularx}
+  \label{table:step1}
+\end{table*}
+ 
+Un exemple de figure est fourni ici (logo de l'UMR EcoFoG, figure~\ref{fig:ecofog2017})
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\linewidth]{EcoFoG2017}
+  \caption{Logo de l'UMR EcoFoG}
+  \label{fig:ecofog2017}
+\end{figure}
+
+
+\section{Texte de remplissage}\label{sec:remplissage}
+ 
+\lipsum
+
+Modèle de liste:
+\begin{itemize}
+  \item premier point;
+  \item deuxième point.
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\bibliographystyle{mee}
+\bibliography{references}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
